@@ -1,0 +1,73 @@
+Tetrashell
+
+Introduction
+Tetrashell is a program in C that operates as a shell used on a provided binary file of a Tetris quicksave. It has unique commands to adjust or give information about the provided Tetris quicksave. This multi-featured program requires a valid Tetris quicksave binary file path to use its features.
+
+Supported Commands and Their Functionalities:
+1. modify:
+The 'modify' command takes two arguments, the field to modify (score, lines, or next_piece) and the value to change it to.
+Examples:
+tetrashell> modify score 2039
+tetrashell> modify next_piece 2
+
+2. check:
+	The 'check' command takes no arguments and indicates if the current quicksave is legitimate or not by using the check program.
+Example:
+tetrashell> check
+
+3. rank:
+	The 'rank' command could take upward of two arguments, the metric to score on and the number of top games to display. It uses the rank program to upload your current quicksave to the central ranking database and print the top players from the leaderboard. You can also invoke the rank command with one or zero arguments. If only the metric is specified, only a few games above/below your current quicksave are displayed according to the metric ranking. If no arguments are specified, only a few games above/below your current quicksave are displayed according to score.
+Examples:
+tetrashell> rank score 30
+tetrashell> rank lines
+tetrashell> rank
+
+4. recover:
+	The 'recover' command takes one argument, the path to a disk image file to recover quicksaves from. It then provides the user with a friendly interface to view the 'recover' command output and optionally switch the current quicksave to one of the recovered ones.
+Example:
+tetrashell> recover /playpen/a4/a4_disk.img
+
+5. exit: 
+	The 'exit' command takes no arguments and causes Tetrashell to exit.
+Example:
+tetrashell> exit
+
+6. switch:
+	The 'switch' command takes one argument, a valid Tetris quicksave binary file path, and lets the user change the current quicksave being hacked to the newly provided one.
+Example:
+tetrashell> switch ./tetris_quicksave2.bin
+
+7. help:
+The 'help' command takes upward of one argument to receive descriptive information for the command——type 'help' to view the available commands with a description.
+Examples:
+tetrashell> help
+tetrashell> help modify
+
+8. info:
+	The 'info' command displays basic information about the current quicksave, such as its path, score, and lines.
+Example:
+Example:
+tetrashell> info
+
+9. undo:
+	The 'undo' command reverts the last 'modify' command executed upon the current quicksave and allows for reverting more than one change by typing 'undo' more than once. Note: switching the current quicksave via the 'switch' or 'recover' command and then typing the 'undo' command won't alter the new quicksave until 'modify' is called upon the new quicksave.
+Example:
+tetrashell> undo
+
+
+10. train:
+	The 'train' command displays a hex conversion trainer, which invites the user to convert hexadecimal numbers to binary or decimals and guides the user on how to convert along the way. This command supports adaptive difficulty, where an easier-to-convert number is given after a mistake and a gradually more difficult one after a correct answer.
+Example:
+tetrashell> train
+
+
+Added Features (These features are precisely implemented as suggested in A5’s write-up):
+1. Improved Prompt
+2. Quick-rank
+3. Pretty-rank
+4. Pretty-recover
+5. Switch Current Quicksave
+6. Built-in Help
+7. Basic Save Info
+8. Undo the Last Modify
+9. Hex Conversion Trainer
