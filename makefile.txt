@@ -1,0 +1,19 @@
+make: tetrashell
+
+copyBinaries:
+	cp /playpen/a5/modify modify
+	cp /playpen/a5/rank rank
+	cp /playpen/a5/check check
+	cp /playpen/a5/recover recover
+
+tetris.h:
+	cp COMP211-SP23-A2/TASK1/tetris.h tetris.h
+
+train:
+	gcc train.c -o train
+
+tetrashell: tetrashell.c tetris.h copyBinaries train
+	gcc tetrashell.c -o tetrashell
+
+clean:
+	rm -rf modify rank check recover tetrashell recovered train
