@@ -1,7 +1,3 @@
-Here’s a polished GitHub README for **Tetrashell** with clean formatting, code blocks, and a professional tone:
-
----
-
 # Tetrashell
 
 **Tetrashell** is a feature-rich C program that functions as an interactive shell for manipulating and inspecting Tetris quicksave binary files. It provides a suite of commands to modify game data, validate save integrity, rank performance, recover lost saves, and more — all from a custom shell interface.
