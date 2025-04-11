@@ -126,7 +126,7 @@ tetrashell> exit
 
 ---
 
-## ✨ Added Features (from Assignment A5)
+## ✨ Added Features
 
 - Improved prompt
 - `quick-rank` support
